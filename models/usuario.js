@@ -44,13 +44,3 @@ UsuarioSchema.method('toJSON', function () {
 })
 
 module.exports = model('Usuario', UsuarioSchema);
-
-// ● User
-// o FullName
-// o Age
-// o Email
-// o Password
-// o posts (relación con los posts del usuario)
-// o createdAt
-// o updatedAt
-// o deletedAt
