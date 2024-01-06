@@ -1,0 +1,113 @@
+Documentation
+redsocial_backend
+
+
+Usuario
+
+
+GET
+traer usuarios
+localhost:3000/api/usuarios
+
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
+POST
+crear usuario
+localhost:3000/api/usuarios
+
+
+Body
+raw (json)
+json
+{
+  "user": "test",
+  "fullName": "Jorge Ospina",
+  "age": 38,
+  "email": "test@gmail.com",
+  "password": "123456"
+}
+PUT
+editar usuario
+localhost:3000/api/usuarios/6598789209c1f73a6d7d33a7
+
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
+Body
+raw (json)
+json
+{
+  "user": "Jorgesss",
+  "fullName": "Jorge Ospina",
+  "age": 38,
+  "email": "jorge2@gmail.com"
+}
+Post
+
+
+GET
+traer post
+localhost:3000/api/posts?from=8
+
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
+Query Params
+from
+8
+GET
+busqueda total
+localhost:3000/api/search/prueba
+
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ1NDg3OTAsImV4cCI6MTcwNDU5MTk5MH0.bwQW3ZMCPCSUlv6T2_fCgZajIRceO2W0SJ___3HhVU0
+POST
+crear post
+localhost:3000/api/usuarios
+
+
+Body
+raw (json)
+json
+{
+  "user": "test",
+  "fullName": "Jorge Ospina",
+  "age": 38,
+  "email": "test@gmail.com",
+  "password": "123456"
+}
+PUT
+editar post
+localhost:3000/api/posts/659899ef7fc6a4d818868382
+
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
+Body
+raw (json)
+json
+{
+  "title": "testssssss",
+  "content": "Jorge Ospina",
+  "likes": 38,
+  "userId": "6598789209c1f73a6d7d33a7"
+}
+POST
+login
+localhost:3000/api/login
+
+
+Body
+raw (json)
+json
+{
+  "email": "jorge1@gmail.com",
+  "password": "123456"
+}
