@@ -29,7 +29,7 @@ const postUsuario = async (req, res) => {
     const salt = bcrypt.genSaltSync();
     usuario.password = bcrypt.hashSync(password, salt);
 
-    usuario.save();
+    await usuario.save();
 
     // generar token
     const token = await generarJwt(usuario.id);
