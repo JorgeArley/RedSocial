@@ -1,22 +1,22 @@
 Documentation
 redsocial_backend
-
+﻿
 
 Usuario
-
+﻿
 
 GET
 traer usuarios
 localhost:3000/api/usuarios
-
+﻿
 
 Request Headers
 x-token
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ2NDA4NjAsImV4cCI6MTcwNDY4NDA2MH0.OwyEigcntN7SRwvmj3BVDyLqRUZPHz5sKxbkIi7e_30
 POST
 crear usuario
 localhost:3000/api/usuarios
-
+﻿
 
 Body
 raw (json)
@@ -25,13 +25,13 @@ json
   "user": "test",
   "fullName": "Jorge Ospina",
   "age": 38,
-  "email": "test@gmail.com",
+  "email": "testd@gmail.com",
   "password": "123456"
 }
 PUT
 editar usuario
 localhost:3000/api/usuarios/6598789209c1f73a6d7d33a7
-
+﻿
 
 Request Headers
 x-token
@@ -45,56 +45,96 @@ json
   "age": 38,
   "email": "jorge2@gmail.com"
 }
-Post
-
-
 GET
-traer post
-localhost:3000/api/posts?from=8
-
+traer usuario por id
+localhost:3000/api/usuarios/6598789209c1f73a6d7d33a7
+﻿
 
 Request Headers
 x-token
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
-Query Params
-from
-8
-GET
-busqueda total
-localhost:3000/api/search/prueba
-
-
-Request Headers
-x-token
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ1NDg3OTAsImV4cCI6MTcwNDU5MTk5MH0.bwQW3ZMCPCSUlv6T2_fCgZajIRceO2W0SJ___3HhVU0
-POST
-crear post
-localhost:3000/api/usuarios
-
-
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ2NDA4NjAsImV4cCI6MTcwNDY4NDA2MH0.OwyEigcntN7SRwvmj3BVDyLqRUZPHz5sKxbkIi7e_30
 Body
 raw (json)
 json
 {
-  "user": "test",
+  "user": "Jorgesss",
   "fullName": "Jorge Ospina",
   "age": 38,
-  "email": "test@gmail.com",
-  "password": "123456"
+  "email": "jorge2@gmail.com"
+}
+Post
+﻿
+
+GET
+traer post
+localhost:3000/api/posts
+﻿
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ2NDA4NjAsImV4cCI6MTcwNDY4NDA2MH0.OwyEigcntN7SRwvmj3BVDyLqRUZPHz5sKxbkIi7e_30
+GET
+traer post por id
+localhost:3000/api/posts/6598a0a0bd7e61c6c9b36d42
+﻿
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ2NDA4NjAsImV4cCI6MTcwNDY4NDA2MH0.OwyEigcntN7SRwvmj3BVDyLqRUZPHz5sKxbkIi7e_30
+GET
+busqueda total
+localhost:3000/api/search/prueba
+﻿
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ2NTc2MDAsImV4cCI6MTcwNDcwMDgwMH0.8AlcBj5qKJ4_yJs4UL1qJCeEEHRXh7zockvbptOZGdk
+POST
+crear post
+localhost:3000/api/posts
+﻿
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTY3MjYsImV4cCI6MTcwNDUzOTkyNn0.Gg_G9N7qzpkwt9cGh3cM6JQ5gWlDSOQak1wuNMwD3p8
+Body
+raw (json)
+json
+{
+  "title": "3 nuevo post sin enviar ",
+  "content": "otra prueba",
+  "likes": 38
 }
 PUT
 editar post
 localhost:3000/api/posts/659899ef7fc6a4d818868382
-
+﻿
 
 Request Headers
 x-token
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ0OTUyNzQsImV4cCI6MTcwNDUzODQ3NH0.ZLz1-u4k2l-B1qBIjBh1qtsfQ7urOCCown_3tW4FnW4
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ1NDg3OTAsImV4cCI6MTcwNDU5MTk5MH0.bwQW3ZMCPCSUlv6T2_fCgZajIRceO2W0SJ___3HhVU0
 Body
 raw (json)
 json
 {
-  "title": "testssssss",
+  "title": "test Cambiado con fecha de updatee",
+  "content": "Jorge Ospina",
+  "likes": 38,
+  "userId": "6598789209c1f73a6d7d33a7"
+}
+DELETE
+eliminar post
+localhost:3000/api/posts/659899ef7fc6a4d818868382
+﻿
+
+Request Headers
+x-token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NTk4N2EzMTA5YzFmNzNhNmQ3ZDMzYWIiLCJpYXQiOjE3MDQ1NDg3OTAsImV4cCI6MTcwNDU5MTk5MH0.bwQW3ZMCPCSUlv6T2_fCgZajIRceO2W0SJ___3HhVU0
+Body
+raw (json)
+json
+{
+  "title": "test Cambiado con fecha de updatee",
   "content": "Jorge Ospina",
   "likes": 38,
   "userId": "6598789209c1f73a6d7d33a7"
@@ -102,7 +142,7 @@ json
 POST
 login
 localhost:3000/api/login
-
+﻿
 
 Body
 raw (json)

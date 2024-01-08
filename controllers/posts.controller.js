@@ -117,11 +117,38 @@ const putPost = async (req, res = response) => {
   }
 }
 
+const deletePostById = async (req, res = response) => {
+
+  const pid = req.params.id;
+
+  try {
+    const PostDB = await Post.deleteOne({ _id: pid });
+
+    if (!PostDB) {
+      return res.status(404).json({
+        ok: false,
+        msg: 'No existe ese post'
+      });
+    }
+
+    res.json({
+      ok: true,
+      post: PostDB
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      ok: false,
+      msg: 'Error inesperado..en el delete por id de Post'
+    });
+  }
+}
 
 module.exports = {
   getPosts,
   createPost,
   putPost,
-  getPostById
+  getPostById,
+  deletePostById
 }
  
