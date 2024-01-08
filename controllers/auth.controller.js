@@ -36,7 +36,7 @@ const login = async (req, res = response) => {
       ok: true,
       token,
       email,
-      type: usuarioDB.type
+      user: usuarioDB.id
     });
 
   } catch (error) {

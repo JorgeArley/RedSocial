@@ -7,12 +7,14 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJwt } = require('../middlewares/validar-jwt');
-const { getPosts, createPost, putPost } = require('../controllers/posts.controller');
+const { getPosts, createPost, putPost, getPostById } = require('../controllers/posts.controller');
 
 
 const router = Router();
 
 router.get('/', validarJwt, getPosts);
+
+router.get('/:id', validarJwt, getPostById);
 
 router.post('/',
   [

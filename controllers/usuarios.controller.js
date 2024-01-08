@@ -12,6 +12,34 @@ const getUsuarios = async (req, res) => {
   });
 }
 
+const getUsuarioById = async (req, res = response) => {
+
+  const uid = req.params.id;
+
+  try {
+    const user = await Usuario.findById(uid)
+        .populate('posts', {});
+
+    if (!user) {
+      return res.status(404).json({
+        ok: false,
+        msg: 'No existe ese usuario'
+      });
+    }
+
+    res.json({
+      ok: true,
+      user: user
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      ok: false,
+      msg: 'Error inesperado..en el get por id de usuario'
+    });
+  }
+}
+
 const postUsuario = async (req, res) => {
   const {email, password} = req.body;
   
@@ -99,5 +127,6 @@ const putUsuario = async (req, res = response) => {
 module.exports = {
   getUsuarios,
   postUsuario,
-  putUsuario
+  putUsuario,
+  getUsuarioById
 }

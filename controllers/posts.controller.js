@@ -1,4 +1,6 @@
 const Post = require('../models/post');
+const Usuario = require('../models/usuario');
+
 const { response } = require('express');
 
 
@@ -20,6 +22,34 @@ const getPosts = async (req, res) => {
   });
 }
 
+const getPostById = async (req, res = response) => {
+
+  const pid = req.params.id;
+
+  try {
+    const PostDB = await Post.findById(pid)
+        .populate('userId','user');
+
+    if (!PostDB) {
+      return res.status(404).json({
+        ok: false,
+        msg: 'No existe ese post'
+      });
+    }
+
+    res.json({
+      ok: true,
+      post: PostDB
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      ok: false,
+      msg: 'Error inesperado..en el get por id de Post'
+    });
+  }
+}
+
 const createPost = async (req, res) => {
 
   const uid = req.uid;
@@ -31,11 +61,16 @@ const createPost = async (req, res) => {
       ...req.body
     });
 
-    await post.save();
+    const newPost = await post.save();
+    
+    await Usuario.findByIdAndUpdate(uid,
+      { $push: { 'posts': newPost._id.toString() } },
+      { new: true }
+    );
 
     res.json({
       ok: true,
-      post
+      newPost
     });
   } catch (error) {
     console.log(error)
@@ -86,6 +121,7 @@ const putPost = async (req, res = response) => {
 module.exports = {
   getPosts,
   createPost,
-  putPost
+  putPost,
+  getPostById
 }
  
